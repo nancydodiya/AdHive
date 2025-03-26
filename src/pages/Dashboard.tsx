@@ -1,5 +1,6 @@
 
 import { useState } from "react";
+import { Link } from "react-router-dom";
 import Layout from "@/components/layout/Layout";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card";
@@ -28,7 +29,9 @@ const Dashboard = () => {
               <p className="text-3xl font-bold">0</p>
             </CardContent>
             <CardFooter>
-              <Button variant="outline" className="w-full">View Details</Button>
+              <Button variant="outline" className="w-full" asChild>
+                <Link to="/campaigns">View Details</Link>
+              </Button>
             </CardFooter>
           </Card>
 
@@ -41,7 +44,9 @@ const Dashboard = () => {
               <p className="text-3xl font-bold">0</p>
             </CardContent>
             <CardFooter>
-              <Button variant="outline" className="w-full">View Requests</Button>
+              <Button variant="outline" className="w-full" asChild>
+                <Link to="/requests">View Requests</Link>
+              </Button>
             </CardFooter>
           </Card>
 
@@ -54,7 +59,9 @@ const Dashboard = () => {
               <p className="text-3xl font-bold">$0</p>
             </CardContent>
             <CardFooter>
-              <Button variant="outline" className="w-full">View Transactions</Button>
+              <Button variant="outline" className="w-full" asChild>
+                <Link to="/transactions">View Transactions</Link>
+              </Button>
             </CardFooter>
           </Card>
         </div>
@@ -67,9 +74,15 @@ const Dashboard = () => {
             </CardHeader>
             <CardContent>
               <div className="flex flex-wrap gap-4">
-                <Button>Create New Campaign</Button>
-                <Button variant="outline">View Analytics</Button>
-                <Button variant="outline">Account Settings</Button>
+                <Button asChild>
+                  <Link to="/new-campaign">Create New Campaign</Link>
+                </Button>
+                <Button variant="outline" asChild>
+                  <Link to="/analytics">View Analytics</Link>
+                </Button>
+                <Button variant="outline" asChild>
+                  <Link to="/account-settings">Account Settings</Link>
+                </Button>
               </div>
             </CardContent>
           </Card>

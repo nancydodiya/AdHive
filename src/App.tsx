@@ -12,6 +12,12 @@ import HowItWorks from "./pages/HowItWorks";
 import ForAdvertisers from "./pages/ForAdvertisers";
 import ForAgencies from "./pages/ForAgencies";
 import NotFound from "./pages/NotFound";
+import Campaigns from "./pages/Campaigns";
+import Requests from "./pages/Requests";
+import Transactions from "./pages/Transactions";
+import NewCampaign from "./pages/NewCampaign";
+import Analytics from "./pages/Analytics";
+import AccountSettings from "./pages/AccountSettings";
 
 const App = () => {
   // Create a new QueryClient instance inside the component
@@ -31,6 +37,12 @@ const App = () => {
             <Route path="/how-it-works" element={<HowItWorks />} />
             <Route path="/for-advertisers" element={<ForAdvertisers />} />
             <Route path="/for-agencies" element={<ForAgencies />} />
+            <Route path="/campaigns" element={<Campaigns />} />
+            <Route path="/requests" element={<Requests />} />
+            <Route path="/transactions" element={<Transactions />} />
+            <Route path="/new-campaign" element={<NewCampaign />} />
+            <Route path="/analytics" element={<Analytics />} />
+            <Route path="/account-settings" element={<AccountSettings />} />
             {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
             <Route path="*" element={<NotFound />} />
           </Routes>
