@@ -1,12 +1,16 @@
 
 import { useState, useEffect } from "react";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { Menu, X } from "lucide-react";
 
 const Navbar = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const location = useLocation();
+  
+  // Check if user is on dashboard (very simple auth check for demo)
+  const isLoggedIn = location.pathname === "/dashboard";
 
   // Handle scroll effect
   useEffect(() => {
@@ -47,14 +51,30 @@ const Navbar = () => {
             <Link to="/for-agencies" className="text-foreground/80 hover:text-primary transition-colors">
               For Agencies
             </Link>
-            <Link to="/login">
-              <Button variant="outline" className="border-primary/20 hover:border-primary">
-                Log In
-              </Button>
-            </Link>
-            <Link to="/register">
-              <Button>Get Started</Button>
-            </Link>
+            
+            {isLoggedIn ? (
+              <>
+                <Link to="/dashboard">
+                  <Button>Dashboard</Button>
+                </Link>
+                <Link to="/">
+                  <Button variant="outline" className="border-primary/20 hover:border-primary">
+                    Logout
+                  </Button>
+                </Link>
+              </>
+            ) : (
+              <>
+                <Link to="/login">
+                  <Button variant="outline" className="border-primary/20 hover:border-primary">
+                    Log In
+                  </Button>
+                </Link>
+                <Link to="/register">
+                  <Button>Get Started</Button>
+                </Link>
+              </>
+            )}
           </nav>
 
           {/* Mobile Menu Toggle */}
@@ -92,16 +112,30 @@ const Navbar = () => {
             >
               For Agencies
             </Link>
-            <div className="pt-2 flex flex-col space-y-3">
-              <Link to="/login" onClick={() => setMobileMenuOpen(false)}>
-                <Button variant="outline" className="w-full border-primary/20">
-                  Log In
-                </Button>
-              </Link>
-              <Link to="/register" onClick={() => setMobileMenuOpen(false)}>
-                <Button className="w-full">Get Started</Button>
-              </Link>
-            </div>
+            
+            {isLoggedIn ? (
+              <div className="pt-2 flex flex-col space-y-3">
+                <Link to="/dashboard" onClick={() => setMobileMenuOpen(false)}>
+                  <Button className="w-full">Dashboard</Button>
+                </Link>
+                <Link to="/" onClick={() => setMobileMenuOpen(false)}>
+                  <Button variant="outline" className="w-full border-primary/20">
+                    Logout
+                  </Button>
+                </Link>
+              </div>
+            ) : (
+              <div className="pt-2 flex flex-col space-y-3">
+                <Link to="/login" onClick={() => setMobileMenuOpen(false)}>
+                  <Button variant="outline" className="w-full border-primary/20">
+                    Log In
+                  </Button>
+                </Link>
+                <Link to="/register" onClick={() => setMobileMenuOpen(false)}>
+                  <Button className="w-full">Get Started</Button>
+                </Link>
+              </div>
+            )}
           </div>
         </div>
       )}
