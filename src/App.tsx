@@ -8,6 +8,9 @@ import Index from "./pages/Index";
 import Login from "./pages/Login";
 import Register from "./pages/Register";
 import Dashboard from "./pages/Dashboard";
+import HowItWorks from "./pages/HowItWorks";
+import ForAdvertisers from "./pages/ForAdvertisers";
+import ForAgencies from "./pages/ForAgencies";
 import NotFound from "./pages/NotFound";
 
 const App = () => {
@@ -25,6 +28,9 @@ const App = () => {
             <Route path="/login" element={<Login />} />
             <Route path="/register" element={<Register />} />
             <Route path="/dashboard" element={<Dashboard />} />
+            <Route path="/how-it-works" element={<HowItWorks />} />
+            <Route path="/for-advertisers" element={<ForAdvertisers />} />
+            <Route path="/for-agencies" element={<ForAgencies />} />
             {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
             <Route path="*" element={<NotFound />} />
           </Routes>
