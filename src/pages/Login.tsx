@@ -1,6 +1,6 @@
 
 import { useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import Layout from "@/components/layout/Layout";
@@ -13,6 +13,7 @@ const Login = () => {
   const [showPassword, setShowPassword] = useState(false);
   const [isLoading, setIsLoading] = useState(false);
   const { toast } = useToast();
+  const navigate = useNavigate();
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -23,13 +24,15 @@ const Login = () => {
       // Simulate API delay
       await new Promise(resolve => setTimeout(resolve, 1000));
       
-      // For demo, just show a toast
+      // For demo, show a toast
       toast({
         title: "Login successful",
         description: "Welcome back to HoardingSync!",
       });
       
-      // In a real app, we would redirect to dashboard or handle errors
+      // Redirect to the dashboard after successful login
+      navigate("/dashboard");
+      
     } catch (error) {
       toast({
         title: "Login failed",
