@@ -27,7 +27,7 @@ const Login = () => {
       // For demo, show a toast
       toast({
         title: "Login successful",
-        description: "Welcome back to HoardingSync!",
+        description: "Welcome back to AdHive!",
       });
       
       // Redirect to the dashboard after successful login
@@ -50,7 +50,7 @@ const Login = () => {
         <div className="w-full max-w-md glass-panel rounded-lg p-8 animate-scale-in">
           <div className="text-center mb-8">
             <Link to="/" className="inline-block mb-6">
-              <h1 className="text-2xl font-bold text-gradient">HoardingSync</h1>
+              <h1 className="text-2xl font-bold text-gradient">AdHive</h1>
             </Link>
             <h2 className="text-2xl font-bold mb-2">Welcome back</h2>
             <p className="text-muted-foreground">

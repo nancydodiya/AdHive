@@ -79,8 +79,8 @@ const NewCampaign = () => {
                 
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                   <div>
-                    <Label htmlFor="budget">Budget (USD)</Label>
-                    <Input id="budget" type="number" min="0" step="100" placeholder="5000" required />
+                    <Label htmlFor="budget">Budget (₹)</Label>
+                    <Input id="budget" type="number" min="0" step="1000" placeholder="500000" required />
                   </div>
                   <div>
                     <Label htmlFor="location">Target Location</Label>

@@ -44,7 +44,7 @@ const Transactions = () => {
                 <TableHead>Transaction ID</TableHead>
                 <TableHead>Date</TableHead>
                 <TableHead>Campaign</TableHead>
-                <TableHead>Amount</TableHead>
+                <TableHead>Amount (₹)</TableHead>
                 <TableHead>Status</TableHead>
                 <TableHead className="text-right">Receipt</TableHead>
               </TableRow>

@@ -1,4 +1,3 @@
-
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import Layout from "@/components/layout/Layout";
@@ -15,7 +14,7 @@ const HowItWorks = () => {
               Our Process
             </div>
             <h1 className="text-4xl md:text-5xl font-bold mb-6">
-              How <span className="text-gradient">HoardingSync</span> Works
+              How <span className="text-gradient">AdHive</span> Works
             </h1>
             <p className="text-xl text-muted-foreground mb-8 max-w-2xl mx-auto">
               From selecting the perfect location to launching your campaign,
@@ -73,7 +72,7 @@ const HowItWorks = () => {
               Ready to Get Started?
             </h2>
             <p className="text-xl text-muted-foreground mb-8 max-w-2xl mx-auto">
-              Join thousands of businesses already using HoardingSync to simplify their outdoor advertising campaigns.
+              Join thousands of businesses already using AdHive to simplify their outdoor advertising campaigns.
             </p>
             <div className="flex flex-col sm:flex-row justify-center gap-4">
               <Link to="/register">

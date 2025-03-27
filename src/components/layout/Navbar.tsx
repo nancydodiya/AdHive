@@ -37,7 +37,7 @@ const Navbar = () => {
             to="/" 
             className="flex items-center space-x-2 text-primary font-bold text-xl"
           >
-            <span className="text-gradient">HoardingSync</span>
+            <span className="text-gradient">AdHive</span>
           </Link>
 
           {/* Desktop Navigation */}

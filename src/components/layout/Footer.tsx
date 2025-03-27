@@ -1,4 +1,3 @@
-
 import { Link } from "react-router-dom";
 import { Facebook, Twitter, Instagram, Linkedin, Mail } from "lucide-react";
 
@@ -9,7 +8,7 @@ const Footer = () => {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
           <div className="space-y-4">
             <Link to="/" className="text-xl font-bold text-gradient">
-              HoardingSync
+              AdHive
             </Link>
             <p className="text-muted-foreground max-w-xs">
               Connecting advertisers and agencies for seamless outdoor advertising solutions.
@@ -107,15 +106,15 @@ const Footer = () => {
         <div className="mt-12 pt-8 border-t border-border">
           <div className="flex flex-col md:flex-row items-center justify-between">
             <p className="text-muted-foreground text-sm">
-              © {new Date().getFullYear()} HoardingSync. All rights reserved.
+              © {new Date().getFullYear()} AdHive. All rights reserved.
             </p>
             <div className="mt-4 md:mt-0">
               <a 
-                href="mailto:info@hoardingsync.com" 
+                href="mailto:info@adhive.com" 
                 className="flex items-center text-sm text-muted-foreground hover:text-primary transition-colors"
               >
                 <Mail size={16} className="mr-2" />
-                info@hoardingsync.com
+                info@adhive.com
               </a>
             </div>
           </div>

@@ -1,4 +1,3 @@
-
 import { useState } from "react";
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
@@ -108,7 +107,7 @@ const Index = () => {
               Process
             </div>
             <h2 className="text-3xl md:text-4xl font-bold mb-6">
-              How HoardingSync Works
+              How AdHive Works
             </h2>
             <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
               From request to display, our platform simplifies every step of the outdoor advertising process.
@@ -143,7 +142,7 @@ const Index = () => {
               Ready to Transform Your Outdoor Advertising?
             </h2>
             <p className="text-xl mb-8 text-primary-foreground/80 max-w-2xl mx-auto">
-              Join thousands of businesses and agencies already using HoardingSync to simplify their outdoor advertising process.
+              Join thousands of businesses and agencies already using AdHive to simplify their outdoor advertising process.
             </p>
             <div className="flex flex-col sm:flex-row justify-center gap-4">
               <Link to="/register">

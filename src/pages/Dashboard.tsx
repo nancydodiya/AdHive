@@ -56,7 +56,7 @@ const Dashboard = () => {
               <CardDescription>Your total advertising spend</CardDescription>
             </CardHeader>
             <CardContent>
-              <p className="text-3xl font-bold">$0</p>
+              <p className="text-3xl font-bold">₹0</p>
             </CardContent>
             <CardFooter>
               <Button variant="outline" className="w-full" asChild>
