@@ -4,10 +4,16 @@ import { Link } from "react-router-dom";
 import Layout from "@/components/layout/Layout";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card";
+import { useCampaigns } from "@/context/CampaignContext";
 
 const Dashboard = () => {
   // This would typically fetch the user data from a backend
   const [userName] = useState("User");
+  const { getActiveCampaigns, getPendingRequests, getTotalSpend } = useCampaigns();
+  
+  const activeCampaigns = getActiveCampaigns();
+  const pendingRequests = getPendingRequests();
+  const totalSpend = getTotalSpend();
   
   return (
     <Layout>
@@ -26,7 +32,7 @@ const Dashboard = () => {
               <CardDescription>Your currently active ad campaigns</CardDescription>
             </CardHeader>
             <CardContent>
-              <p className="text-3xl font-bold">0</p>
+              <p className="text-3xl font-bold">{activeCampaigns.length}</p>
             </CardContent>
             <CardFooter>
               <Button variant="outline" className="w-full" asChild>
@@ -41,7 +47,7 @@ const Dashboard = () => {
               <CardDescription>Requests awaiting approval</CardDescription>
             </CardHeader>
             <CardContent>
-              <p className="text-3xl font-bold">0</p>
+              <p className="text-3xl font-bold">{pendingRequests.length}</p>
             </CardContent>
             <CardFooter>
               <Button variant="outline" className="w-full" asChild>
@@ -56,7 +62,7 @@ const Dashboard = () => {
               <CardDescription>Your total advertising spend</CardDescription>
             </CardHeader>
             <CardContent>
-              <p className="text-3xl font-bold">₹0</p>
+              <p className="text-3xl font-bold">₹{totalSpend.toLocaleString('en-IN')}</p>
             </CardContent>
             <CardFooter>
               <Button variant="outline" className="w-full" asChild>

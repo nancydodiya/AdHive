@@ -12,10 +12,33 @@ import {
   TableHeader,
   TableRow,
 } from "@/components/ui/table";
+import { useCampaigns } from "@/context/CampaignContext";
+import { Badge } from "@/components/ui/badge";
 
 const Campaigns = () => {
-  // This would typically fetch campaign data from a backend
-  const campaigns = [];
+  const { campaigns } = useCampaigns();
+  
+  // Format date function
+  const formatDate = (dateString: string) => {
+    const date = new Date(dateString);
+    return date.toLocaleDateString('en-IN');
+  };
+  
+  // Status badge component
+  const StatusBadge = ({ status }: { status: string }) => {
+    switch(status) {
+      case 'active':
+        return <Badge className="bg-green-500">Active</Badge>;
+      case 'pending':
+        return <Badge variant="outline" className="bg-yellow-100 text-yellow-800 border-yellow-300">Pending</Badge>;
+      case 'completed':
+        return <Badge variant="outline" className="bg-blue-100 text-blue-800 border-blue-300">Completed</Badge>;
+      case 'rejected':
+        return <Badge variant="destructive">Rejected</Badge>;
+      default:
+        return <Badge variant="outline">{status}</Badge>;
+    }
+  };
   
   return (
     <Layout>
@@ -63,7 +86,17 @@ const Campaigns = () => {
               ) : (
                 campaigns.map((campaign) => (
                   <TableRow key={campaign.id}>
-                    {/* Campaign data would be displayed here */}
+                    <TableCell>{campaign.name}</TableCell>
+                    <TableCell>{campaign.location}</TableCell>
+                    <TableCell>{formatDate(campaign.startDate)}</TableCell>
+                    <TableCell>{formatDate(campaign.endDate)}</TableCell>
+                    <TableCell>
+                      <StatusBadge status={campaign.status} />
+                    </TableCell>
+                    <TableCell>₹{campaign.budget.toLocaleString('en-IN')}</TableCell>
+                    <TableCell className="text-right">
+                      <Button variant="outline" size="sm">View Details</Button>
+                    </TableCell>
                   </TableRow>
                 ))
               )}
