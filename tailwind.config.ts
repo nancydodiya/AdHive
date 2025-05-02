@@ -63,14 +63,6 @@ export default {
           blue: "#D3E4FD",
           gray: "#F1F0FB",
         },
-        sidebar: {
-          DEFAULT: "transparent",
-          border: "hsl(var(--border))",
-          foreground: "hsl(var(--foreground))",
-          ring: "hsl(var(--ring))",
-          accent: "hsl(var(--accent))",
-          "accent-foreground": "hsl(var(--accent-foreground))",
-        },
       },
       borderRadius: {
         lg: "var(--radius)",
