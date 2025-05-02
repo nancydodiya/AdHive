@@ -52,9 +52,7 @@
 }
 
 @layer components {
-  .glass-panel {
-    @apply bg-white/80 backdrop-blur-lg border border-white/20 shadow-lg;
-  }
+  /* Removed the glass-panel class that was causing blur */
   
   .card-hover {
     @apply transition-all duration-300 hover:shadow-xl hover:-translate-y-1;

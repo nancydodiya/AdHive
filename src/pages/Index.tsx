@@ -35,10 +35,10 @@ const Index = () => {
           </div>
         </div>
         
-        {/* Abstract shapes */}
+        {/* Removed the blur element and replacing with a clean divider */}
         <div className="absolute -bottom-16 left-0 w-full overflow-hidden">
           <div className="container mx-auto px-4">
-            <div className="relative h-48 md:h-64 glass-panel rounded-t-3xl"></div>
+            <div className="relative h-48 md:h-64 bg-secondary border-t border-border rounded-t-3xl"></div>
           </div>
         </div>
       </section>
