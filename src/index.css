@@ -43,6 +43,7 @@
   body {
     @apply bg-background text-foreground antialiased;
     font-feature-settings: "ss01", "ss02", "cv01", "cv02", "cv03";
+    background-image: linear-gradient(to top, #e6e9f0 0%, #eef1f5 100%);
   }
 
   /* Smooth scrolling */
@@ -52,8 +53,6 @@
 }
 
 @layer components {
-  /* Removed the glass-panel class that was causing blur */
-  
   .card-hover {
     @apply transition-all duration-300 hover:shadow-xl hover:-translate-y-1;
   }
@@ -86,13 +85,15 @@
     animation-delay: 500ms;
   }
 
-  /* New pastel themed components */
+  /* Enhanced pastel themed components */
   .pastel-card {
     @apply bg-white border border-pastel-purple/20 shadow-sm rounded-xl hover:shadow-md transition-all;
+    background-image: linear-gradient(109.6deg, rgba(223,234,247,1) 11.2%, rgba(244,248,252,1) 91.1%);
   }
 
   .pastel-panel {
     @apply bg-white border border-pastel-purple/20 shadow-sm rounded-xl;
+    background-image: linear-gradient(to top, #accbee 0%, #e7f0fd 100%);
   }
   
   .pastel-gradient {
@@ -101,5 +102,41 @@
 
   .pastel-gradient-text {
     @apply bg-clip-text text-transparent bg-gradient-to-r from-primary to-accent-foreground;
+  }
+  
+  /* New colorful components */
+  .colorful-card {
+    @apply rounded-xl shadow-md transition-all duration-300 hover:shadow-xl hover:-translate-y-1;
+    background-image: linear-gradient(90deg, hsla(46, 73%, 75%, 1) 0%, hsla(176, 73%, 88%, 1) 100%);
+  }
+  
+  .colorful-panel-yellow {
+    @apply rounded-xl shadow-sm;
+    background-image: linear-gradient(184.1deg, rgba(249,255,182,1) 44.7%, rgba(226,255,172,1) 67.2%);
+  }
+  
+  .colorful-panel-blue {
+    @apply rounded-xl shadow-sm;
+    background-image: linear-gradient(90deg, hsla(186, 33%, 94%, 1) 0%, hsla(216, 41%, 79%, 1) 100%);
+  }
+  
+  .colorful-panel-pink {
+    @apply rounded-xl shadow-sm;
+    background-image: linear-gradient(90deg, rgb(245,152,168) 0%, rgb(246,237,178) 100%);
+  }
+  
+  .colorful-panel-green {
+    @apply rounded-xl shadow-sm;
+    background-image: linear-gradient(90deg, hsla(139, 70%, 75%, 1) 0%, hsla(63, 90%, 76%, 1) 100%);
+  }
+  
+  .colorful-button {
+    @apply rounded-full font-medium shadow-md transition-all duration-300 text-white hover:shadow-lg hover:-translate-y-0.5;
+    background-image: linear-gradient(90deg, hsla(277, 75%, 84%, 1) 0%, hsla(297, 50%, 51%, 1) 100%);
+  }
+  
+  .colorful-gradient-text {
+    @apply bg-clip-text text-transparent;
+    background-image: linear-gradient(102.3deg, rgba(147,39,143,1) 5.9%, rgba(234,172,232,1) 64%, rgba(246,219,245,1) 89%);
   }
 }

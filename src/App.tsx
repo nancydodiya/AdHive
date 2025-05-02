@@ -28,27 +28,29 @@ const App = () => {
     <QueryClientProvider client={queryClient}>
       <TooltipProvider>
         <CampaignProvider>
-          <Toaster />
-          <Sonner />
-          <BrowserRouter>
-            <Routes>
-              <Route path="/" element={<Index />} />
-              <Route path="/login" element={<Login />} />
-              <Route path="/register" element={<Register />} />
-              <Route path="/dashboard" element={<Dashboard />} />
-              <Route path="/how-it-works" element={<HowItWorks />} />
-              <Route path="/for-advertisers" element={<ForAdvertisers />} />
-              <Route path="/for-agencies" element={<ForAgencies />} />
-              <Route path="/campaigns" element={<Campaigns />} />
-              <Route path="/requests" element={<Requests />} />
-              <Route path="/transactions" element={<Transactions />} />
-              <Route path="/new-campaign" element={<NewCampaign />} />
-              <Route path="/analytics" element={<Analytics />} />
-              <Route path="/account-settings" element={<AccountSettings />} />
-              {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
-              <Route path="*" element={<NotFound />} />
-            </Routes>
-          </BrowserRouter>
+          <div className="bg-gradient-to-b from-pastel-blue/10 to-pastel-purple/10 min-h-screen">
+            <Toaster />
+            <Sonner />
+            <BrowserRouter>
+              <Routes>
+                <Route path="/" element={<Index />} />
+                <Route path="/login" element={<Login />} />
+                <Route path="/register" element={<Register />} />
+                <Route path="/dashboard" element={<Dashboard />} />
+                <Route path="/how-it-works" element={<HowItWorks />} />
+                <Route path="/for-advertisers" element={<ForAdvertisers />} />
+                <Route path="/for-agencies" element={<ForAgencies />} />
+                <Route path="/campaigns" element={<Campaigns />} />
+                <Route path="/requests" element={<Requests />} />
+                <Route path="/transactions" element={<Transactions />} />
+                <Route path="/new-campaign" element={<NewCampaign />} />
+                <Route path="/analytics" element={<Analytics />} />
+                <Route path="/account-settings" element={<AccountSettings />} />
+                {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
+                <Route path="*" element={<NotFound />} />
+              </Routes>
+            </BrowserRouter>
+          </div>
         </CampaignProvider>
       </TooltipProvider>
     </QueryClientProvider>
