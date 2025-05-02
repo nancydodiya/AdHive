@@ -17,6 +17,7 @@ import {
 import { Home, Users, BarChart2, FileText, Settings, Menu } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
+import { TooltipProvider } from "@/components/ui/tooltip";
 
 interface LayoutProps {
   children: React.ReactNode;
@@ -35,27 +36,29 @@ const Layout = ({ children, showFooter = true }: LayoutProps) => {
   return (
     <SidebarProvider>
       <div className="flex flex-col md:flex-row min-h-screen">
-        <Sidebar>
-          <SidebarContent>
-            <SidebarGroup>
-              <SidebarGroupLabel>Navigation</SidebarGroupLabel>
-              <SidebarGroupContent>
-                <SidebarMenu>
-                  {menuItems.map((item) => (
-                    <SidebarMenuItem key={item.label}>
-                      <SidebarMenuButton asChild tooltip={item.label}>
-                        <Link to={item.path}>
-                          <item.icon />
-                          <span>{item.label}</span>
-                        </Link>
-                      </SidebarMenuButton>
-                    </SidebarMenuItem>
-                  ))}
-                </SidebarMenu>
-              </SidebarGroupContent>
-            </SidebarGroup>
-          </SidebarContent>
-        </Sidebar>
+        <TooltipProvider>
+          <Sidebar>
+            <SidebarContent>
+              <SidebarGroup>
+                <SidebarGroupLabel>Navigation</SidebarGroupLabel>
+                <SidebarGroupContent>
+                  <SidebarMenu>
+                    {menuItems.map((item) => (
+                      <SidebarMenuItem key={item.label}>
+                        <SidebarMenuButton asChild tooltip={item.label}>
+                          <Link to={item.path}>
+                            <item.icon />
+                            <span>{item.label}</span>
+                          </Link>
+                        </SidebarMenuButton>
+                      </SidebarMenuItem>
+                    ))}
+                  </SidebarMenu>
+                </SidebarGroupContent>
+              </SidebarGroup>
+            </SidebarContent>
+          </Sidebar>
+        </TooltipProvider>
         
         <div className="flex-grow flex flex-col">
           <div className="flex items-center p-4 border-b">
