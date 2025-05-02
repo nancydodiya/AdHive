@@ -1,3 +1,4 @@
+
 import { useState } from "react";
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
@@ -8,26 +9,26 @@ const Index = () => {
   return (
     <Layout>
       {/* Hero Section */}
-      <section className="relative overflow-hidden">
+      <section className="relative overflow-hidden bg-gradient-to-b from-pastel-purple/20 to-pastel-blue/10">
         <div className="container mx-auto px-4 pt-20 pb-24 md:pt-32 md:pb-32">
           <div className="max-w-3xl mx-auto text-center">
-            <div className="inline-block bg-primary/10 text-primary px-4 py-1 rounded-full text-sm font-medium mb-6 animate-fade-in">
+            <div className="inline-block bg-pastel-purple/20 text-primary px-4 py-1 rounded-full text-sm font-medium mb-6 animate-fade-in">
               Revolutionizing Outdoor Advertising
             </div>
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight mb-6 tracking-tight animate-fade-in animate-delay-100">
-              Connect, Advertise, <span className="text-gradient">Amplify</span>
+              Connect, Advertise, <span className="pastel-gradient-text">Amplify</span>
             </h1>
             <p className="text-xl md:text-2xl text-muted-foreground mb-8 md:mb-10 max-w-2xl mx-auto text-balance animate-fade-in animate-delay-200">
               The platform that connects advertisers with the perfect outdoor spaces, simplifying the process from request to display.
             </p>
             <div className="flex flex-col sm:flex-row justify-center gap-4 animate-fade-in animate-delay-300">
               <Link to="/register">
-                <Button size="lg" className="w-full sm:w-auto">
+                <Button size="lg" className="w-full sm:w-auto bg-primary hover:bg-primary/90">
                   Get Started <ArrowRight size={16} className="ml-2" />
                 </Button>
               </Link>
               <Link to="/how-it-works">
-                <Button size="lg" variant="outline" className="w-full sm:w-auto">
+                <Button size="lg" variant="outline" className="w-full sm:w-auto border-primary/20 hover:bg-primary/5">
                   Learn How It Works
                 </Button>
               </Link>
@@ -35,19 +36,19 @@ const Index = () => {
           </div>
         </div>
         
-        {/* Removed the blur element and replacing with a clean divider */}
+        {/* Clean divider with pastel styling */}
         <div className="absolute -bottom-16 left-0 w-full overflow-hidden">
           <div className="container mx-auto px-4">
-            <div className="relative h-48 md:h-64 bg-secondary border-t border-border rounded-t-3xl"></div>
+            <div className="relative h-48 md:h-64 bg-pastel-blue/10 border-t border-pastel-purple/20 rounded-t-3xl"></div>
           </div>
         </div>
       </section>
 
       {/* Features Section */}
-      <section className="bg-secondary relative z-10 py-20 md:py-28">
+      <section className="bg-pastel-gray/30 relative z-10 py-20 md:py-28">
         <div className="container mx-auto px-4">
           <div className="max-w-3xl mx-auto text-center mb-16">
-            <div className="inline-block bg-primary/10 text-primary px-4 py-1 rounded-full text-sm font-medium mb-4">
+            <div className="inline-block bg-pastel-purple/20 text-primary px-4 py-1 rounded-full text-sm font-medium mb-4">
               Features
             </div>
             <h2 className="text-3xl md:text-4xl font-bold mb-6">
@@ -100,10 +101,10 @@ const Index = () => {
       </section>
 
       {/* How It Works */}
-      <section className="py-20 md:py-28">
+      <section className="py-20 md:py-28 bg-gradient-to-b from-white to-pastel-blue/10">
         <div className="container mx-auto px-4">
           <div className="max-w-3xl mx-auto text-center mb-16">
-            <div className="inline-block bg-primary/10 text-primary px-4 py-1 rounded-full text-sm font-medium mb-4">
+            <div className="inline-block bg-pastel-purple/20 text-primary px-4 py-1 rounded-full text-sm font-medium mb-4">
               Process
             </div>
             <h2 className="text-3xl md:text-4xl font-bold mb-6">
@@ -135,13 +136,13 @@ const Index = () => {
       </section>
 
       {/* CTA Section */}
-      <section className="py-20 md:py-28 bg-primary text-primary-foreground">
+      <section className="py-20 md:py-28 bg-gradient-to-r from-primary/90 to-accent-foreground/90 text-primary-foreground">
         <div className="container mx-auto px-4">
           <div className="max-w-4xl mx-auto text-center">
             <h2 className="text-3xl md:text-4xl font-bold mb-6">
               Ready to Transform Your Outdoor Advertising?
             </h2>
-            <p className="text-xl mb-8 text-primary-foreground/80 max-w-2xl mx-auto">
+            <p className="text-xl mb-8 text-primary-foreground/90 max-w-2xl mx-auto">
               Join thousands of businesses and agencies already using AdHive to simplify their outdoor advertising process.
             </p>
             <div className="flex flex-col sm:flex-row justify-center gap-4">
@@ -174,10 +175,10 @@ const Index = () => {
 const FeatureCard = ({ icon, title, description, delay = 0 }) => {
   return (
     <div 
-      className={`bg-white rounded-lg p-6 shadow-sm hover:shadow-md transition-all card-hover animate-fade-in`}
+      className={`bg-white rounded-xl p-6 shadow-sm hover:shadow-md transition-all card-hover animate-fade-in border border-pastel-purple/10`}
       style={{ animationDelay: `${delay}ms` }}
     >
-      <div className="bg-primary/10 p-3 rounded-lg inline-block mb-4">
+      <div className="bg-pastel-purple/20 p-3 rounded-lg inline-block mb-4 text-primary">
         {icon}
       </div>
       <h3 className="text-xl font-semibold mb-2">{title}</h3>
@@ -188,8 +189,8 @@ const FeatureCard = ({ icon, title, description, delay = 0 }) => {
 
 const StepCard = ({ number, title, description }) => {
   return (
-    <div className="text-center md:text-left">
-      <div className="inline-block bg-secondary rounded-full w-16 h-16 flex items-center justify-center mb-4">
+    <div className="text-center md:text-left bg-white p-6 rounded-xl border border-pastel-purple/10 shadow-sm hover:shadow-md transition-all">
+      <div className="inline-block bg-pastel-purple/20 rounded-full w-16 h-16 flex items-center justify-center mb-4">
         <span className="text-xl font-bold text-primary">{number}</span>
       </div>
       <h3 className="text-xl font-semibold mb-2">{title}</h3>

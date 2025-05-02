@@ -46,11 +46,11 @@ const Login = () => {
 
   return (
     <Layout showFooter={false}>
-      <div className="min-h-screen flex items-center justify-center px-4 py-12">
-        <div className="w-full max-w-md glass-panel rounded-lg p-8 animate-scale-in">
+      <div className="min-h-screen flex items-center justify-center px-4 py-12 bg-gradient-to-b from-pastel-purple/20 to-pastel-blue/10">
+        <div className="w-full max-w-md pastel-panel p-8 animate-scale-in">
           <div className="text-center mb-8">
             <Link to="/" className="inline-block mb-6">
-              <h1 className="text-2xl font-bold text-gradient">AdHive</h1>
+              <h1 className="text-2xl font-bold pastel-gradient-text">AdHive</h1>
             </Link>
             <h2 className="text-2xl font-bold mb-2">Welcome back</h2>
             <p className="text-muted-foreground">
@@ -70,7 +70,7 @@ const Login = () => {
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
                 required
-                className="w-full"
+                className="w-full bg-pastel-gray/20 border-pastel-purple/20"
               />
             </div>
             
@@ -91,7 +91,7 @@ const Login = () => {
                   value={password}
                   onChange={(e) => setPassword(e.target.value)}
                   required
-                  className="w-full pr-10"
+                  className="w-full pr-10 bg-pastel-gray/20 border-pastel-purple/20"
                 />
                 <button
                   type="button"
@@ -105,7 +105,7 @@ const Login = () => {
             
             <Button
               type="submit"
-              className="w-full"
+              className="w-full bg-primary hover:bg-primary/90"
               disabled={isLoading}
             >
               {isLoading ? "Signing in..." : "Sign in"}

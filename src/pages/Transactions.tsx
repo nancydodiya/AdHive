@@ -21,7 +21,7 @@ const Transactions = () => {
     <Layout>
       <div className="container mx-auto px-4 py-8">
         <div className="flex items-center mb-8">
-          <Button variant="ghost" size="sm" asChild className="mr-4">
+          <Button variant="ghost" size="sm" asChild className="mr-4 text-primary hover:bg-pastel-purple/10">
             <Link to="/dashboard">
               <ArrowLeft className="mr-2 h-4 w-4" />
               Back to Dashboard
@@ -30,7 +30,7 @@ const Transactions = () => {
           <h1 className="text-3xl font-bold">Transaction History</h1>
         </div>
         
-        <div className="bg-white rounded-lg shadow">
+        <div className="bg-white rounded-xl shadow-sm border border-pastel-purple/10">
           <Table>
             <TableCaption>
               {transactions.length === 0 ? (
@@ -40,7 +40,7 @@ const Transactions = () => {
               )}
             </TableCaption>
             <TableHeader>
-              <TableRow>
+              <TableRow className="bg-pastel-gray/20 hover:bg-pastel-gray/30">
                 <TableHead>Transaction ID</TableHead>
                 <TableHead>Date</TableHead>
                 <TableHead>Campaign</TableHead>
@@ -54,7 +54,7 @@ const Transactions = () => {
                 <TableRow>
                   <TableCell colSpan={6} className="text-center py-8">
                     <p className="text-muted-foreground mb-4">No transactions found</p>
-                    <Button asChild>
+                    <Button asChild className="bg-primary hover:bg-primary/90">
                       <Link to="/new-campaign">Create Your First Campaign</Link>
                     </Button>
                   </TableCell>

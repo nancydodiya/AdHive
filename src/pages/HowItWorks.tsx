@@ -1,3 +1,4 @@
+
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import Layout from "@/components/layout/Layout";
@@ -7,14 +8,14 @@ const HowItWorks = () => {
   return (
     <Layout>
       {/* Hero Section */}
-      <section className="pt-20 pb-16 md:pt-28 md:pb-20">
+      <section className="pt-20 pb-16 md:pt-28 md:pb-20 bg-gradient-to-b from-pastel-purple/20 to-pastel-blue/10">
         <div className="container mx-auto px-4">
           <div className="max-w-3xl mx-auto text-center">
-            <div className="inline-block bg-primary/10 text-primary px-4 py-1 rounded-full text-sm font-medium mb-6">
+            <div className="inline-block bg-pastel-purple/20 text-primary px-4 py-1 rounded-full text-sm font-medium mb-6">
               Our Process
             </div>
             <h1 className="text-4xl md:text-5xl font-bold mb-6">
-              How <span className="text-gradient">AdHive</span> Works
+              How <span className="pastel-gradient-text">AdHive</span> Works
             </h1>
             <p className="text-xl text-muted-foreground mb-8 max-w-2xl mx-auto">
               From selecting the perfect location to launching your campaign,
@@ -25,7 +26,7 @@ const HowItWorks = () => {
       </section>
 
       {/* Process Steps */}
-      <section className="py-16 bg-secondary/50">
+      <section className="py-16 bg-pastel-gray/30">
         <div className="container mx-auto px-4">
           <div className="max-w-4xl mx-auto">
             <div className="grid gap-8 md:gap-12">
@@ -65,7 +66,7 @@ const HowItWorks = () => {
       </section>
 
       {/* CTA Section */}
-      <section className="py-20">
+      <section className="py-20 bg-gradient-to-r from-pastel-blue/30 to-pastel-purple/20">
         <div className="container mx-auto px-4">
           <div className="max-w-3xl mx-auto text-center">
             <h2 className="text-3xl md:text-4xl font-bold mb-6">
@@ -76,12 +77,12 @@ const HowItWorks = () => {
             </p>
             <div className="flex flex-col sm:flex-row justify-center gap-4">
               <Link to="/register">
-                <Button size="lg" className="w-full sm:w-auto">
+                <Button size="lg" className="w-full sm:w-auto bg-primary hover:bg-primary/90">
                   Get Started <ArrowRight size={16} className="ml-2" />
                 </Button>
               </Link>
               <Link to="/for-advertisers">
-                <Button size="lg" variant="outline" className="w-full sm:w-auto">
+                <Button size="lg" variant="outline" className="w-full sm:w-auto border-primary/20 hover:bg-primary/5">
                   Learn More for Advertisers
                 </Button>
               </Link>
@@ -95,9 +96,9 @@ const HowItWorks = () => {
 
 const ProcessStep = ({ number, title, description }) => {
   return (
-    <div className="bg-white p-6 rounded-lg shadow-sm flex gap-6 hover:shadow-md transition-shadow">
+    <div className="bg-white p-6 rounded-xl shadow-sm flex gap-6 hover:shadow-md transition-shadow border border-pastel-purple/10">
       <div className="flex-shrink-0">
-        <div className="bg-primary/10 rounded-full w-12 h-12 flex items-center justify-center">
+        <div className="bg-pastel-purple/20 rounded-full w-12 h-12 flex items-center justify-center">
           <span className="text-primary font-bold">{number}</span>
         </div>
       </div>
