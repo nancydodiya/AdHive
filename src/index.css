@@ -34,6 +34,10 @@
     --ring: 260 84% 60%;
     
     --radius: 0.75rem;
+
+    /* Adding sidebar gradient colors */
+    --sidebar-gradient-start: 265 85% 92%;
+    --sidebar-gradient-end: 260 80% 85%;
   }
   
   * {
@@ -101,5 +105,14 @@
 
   .pastel-gradient-text {
     @apply bg-clip-text text-transparent bg-gradient-to-r from-primary to-accent-foreground;
+  }
+
+  /* Sidebar gradient classes */
+  .sidebar-gradient {
+    @apply bg-gradient-to-b from-[hsl(var(--sidebar-gradient-start))] to-[hsl(var(--sidebar-gradient-end))];
+  }
+
+  .sidebar-gradient-hover {
+    @apply hover:bg-gradient-to-r hover:from-pastel-purple/30 hover:to-pastel-blue/30;
   }
 }
